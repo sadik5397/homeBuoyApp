@@ -9,11 +9,11 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  BuildContext context;
-
   @override
   Widget build(BuildContext context) {
-    this.context = context;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         child: Center(
@@ -39,8 +39,8 @@ class _WelcomeState extends State<Welcome> {
               ),
               IconButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) {
                     return Intro();
                   }));
                 },

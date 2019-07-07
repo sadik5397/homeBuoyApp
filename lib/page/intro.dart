@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rakin_test/page/register.dart';
 import '../component/textStyle.dart';
 import 'login.dart';
 
@@ -10,6 +11,8 @@ class Intro extends StatefulWidget {
 class _IntroState extends State<Intro> {
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -18,7 +21,7 @@ class _IntroState extends State<Intro> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                  height: 80,
+                  height: height*.1,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -36,14 +39,11 @@ class _IntroState extends State<Intro> {
                   ],
                 ),
                 SizedBox(
-                  height: 80,
+                  height: height*.1,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                      width: 200,
-                    ),
                     SizedBox(
                       width: 200,
                       height: 60,
@@ -62,19 +62,24 @@ class _IntroState extends State<Intro> {
                       ),
                     ),
                     SizedBox(
+                      width: width*.1,
+                    ),
+                    SizedBox(
                       width: 200,
                       height: 60,
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return Register();
+                              }));
+                        },
                         color: Colors.deepOrange,
                         child: Text(
                           "Register",
                           style: bigButtonText,
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 200,
                     ),
                   ],
                 )
