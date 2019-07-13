@@ -2,23 +2,34 @@ import 'package:flutter/material.dart';
 import '../component/textStyle.dart';
 import '../component/colors.dart';
 import '../component/function.dart';
-import '../page/registerTermsCondition.dart';
+import 'registerCheckOut.dart';
 
-class Register extends StatefulWidget {
+class RegisterTermsConditions extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _RegisterTermsConditionsState createState() =>
+      _RegisterTermsConditionsState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterTermsConditionsState extends State<RegisterTermsConditions> {
   @override
   Widget build(BuildContext context) {
     //Default Values
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    bool tncAccepted = false;
 
     //API data
     var hotelLogo =
         "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
+    var tnc =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+    //State Management
+    void tncCheck(bool value) {
+      setState(() {
+        tncAccepted = value;
+      });
+    }
 
     return Scaffold(
       body: Column(
@@ -28,9 +39,10 @@ class _RegisterState extends State<Register> {
               children: <Widget>[
                 //Left Side
                 leftSide(hotelLogo, width, height, context),
+
                 //Right Side
                 Container(
-                  width: width * .5,
+                  width: MediaQuery.of(context).size.width * .5,
                   color: Colors.grey.shade50,
                   child: Stack(
                     alignment: Alignment.bottomRight,
@@ -60,64 +72,27 @@ class _RegisterState extends State<Register> {
                                   height: 30,
                                 ),
                                 Text(
-                                  "Basic Info",
+                                  "Terms & Conditions",
                                   style: subHeading,
                                 ),
                                 SizedBox(
                                   height: 25,
                                 ),
-                                TextFormField(
-                                  keyboardType: TextInputType.text,
-                                  style: formData,
-                                  decoration: InputDecoration(
-                                    labelText: "Your Name",
-                                    hintText: "e.g.: John Doe",
-                                    labelStyle: formLabel,
-                                    hintStyle: formHelper,
-                                    border: OutlineInputBorder(),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                TextFormField(
-                                  keyboardType: TextInputType.text,
-                                  style: formData,
-                                  decoration: InputDecoration(
-                                    labelText: "Physical Address",
-                                    hintText: "128, Sydney",
-                                    labelStyle: formLabel,
-                                    hintStyle: formHelper,
-                                    border: OutlineInputBorder(),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                TextFormField(
-                                  keyboardType: TextInputType.number,
-                                  style: formData,
-                                  decoration: InputDecoration(
-                                    labelText: "Mobile Number",
-                                    hintText: "e.g.: +891 125 8887",
-                                    labelStyle: formLabel,
-                                    hintStyle: formHelper,
-                                    border: OutlineInputBorder(),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                TextFormField(
-                                  keyboardType: TextInputType.emailAddress,
-                                  style: formData,
-                                  decoration: InputDecoration(
-                                    labelText: "Your Email",
-                                    hintText: "e.g.: homebuoy@gmail.com",
-                                    labelStyle: formLabel,
-                                    hintStyle: formHelper,
-                                    border: OutlineInputBorder(),
-                                  ),
+                                Container(child: Text(tnc, style: tncStyle)),
+                                SizedBox(height: 20),
+                                Row(
+                                  children: <Widget>[
+                                    Checkbox(
+                                      value: tncAccepted,
+                                      onChanged: (bool value) {
+                                        tncCheck(value);
+                                      },
+                                    ),
+                                    Text(
+                                      "I have Read and Accepted the Terms & Conditions",
+                                      style: formLabel,
+                                    ),
+                                  ],
                                 ),
                                 SizedBox(
                                   height: height * .05,
@@ -128,10 +103,12 @@ class _RegisterState extends State<Register> {
                                   child: RaisedButton(
                                     onPressed: () {
                                       Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (BuildContext context) {
-                                        return RegisterTermsConditions();
-                                      }));
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) {
+                                                return RegisterCheckOut();
+                                          },
+                                        ),
+                                      );
                                     },
                                     color: homebuoyColor,
                                     child: Text(

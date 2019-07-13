@@ -71,7 +71,8 @@ class _IntroState extends State<Intro> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) {
-                                return Register();
+                                return Register(
+                                );
                               }));
                         },
                         color: Colors.deepOrange,

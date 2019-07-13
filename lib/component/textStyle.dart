@@ -1,5 +1,6 @@
 //textStyle.dart
 import 'package:flutter/material.dart';
+import 'colors.dart';
 
 TextStyle main = TextStyle(
   color: Colors.black87,
@@ -8,19 +9,19 @@ TextStyle main = TextStyle(
 );
 
 TextStyle welcome = TextStyle(
-  color: Colors.black87,
+  color: Colors.white,
   fontSize: 110,
   fontWeight: FontWeight.w300,
 );
 
 TextStyle welcomeSubtitle = TextStyle(
-  color: Colors.black87,
-  fontSize: 30,
-  fontWeight: FontWeight.w400,
-);
+    color: Colors.white,
+    fontSize: 30,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.italic);
 
 TextStyle hotelName = TextStyle(
-  color: Colors.black87,
+  color: Colors.white,
   fontSize: 100,
   fontWeight: FontWeight.w400,
 );
@@ -35,4 +36,47 @@ TextStyle homeBuoyFooter = TextStyle(
   color: Colors.white,
   fontSize: 20,
   fontWeight: FontWeight.w600,
+);
+
+TextStyle heading = TextStyle(
+  color: Colors.deepOrange,
+  fontSize: 45,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle headingWhite = TextStyle(
+  color: Colors.white,
+  fontSize: 45,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle subHeading = TextStyle(
+  color: Colors.deepOrange,
+  fontSize: 30,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle formLabel = TextStyle(
+  color: homebuoyColor,
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle formHelper = TextStyle(
+  color: Colors.black38,
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle formData = TextStyle(
+  color: Colors.black87,
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle tncStyle = TextStyle(
+  color: Colors.black87,
+  height: 1.5,
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
 );
