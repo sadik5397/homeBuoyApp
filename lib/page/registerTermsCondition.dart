@@ -128,16 +128,7 @@ class _RegisterTermsConditionsState extends State<RegisterTermsConditions> {
               ],
             ),
           ),
-          Container(
-            height: 50,
-            alignment: Alignment.center,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.deepOrange,
-            child: Text(
-              "Powered by HOMEBUOY",
-              style: homeBuoyFooter,
-            ),
-          ),
+          poweredBy(width),
         ],
       ),
     );

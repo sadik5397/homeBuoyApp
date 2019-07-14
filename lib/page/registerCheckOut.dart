@@ -75,6 +75,7 @@ class _RegisterCheckOutState extends State<RegisterCheckOut> {
                                         width: width * .5 * .25,
                                         child: TextFormField(
                                           keyboardType: TextInputType.number,
+                                          autofocus: true,
                                           style: formData,
                                           decoration: InputDecoration(
                                             labelText: "Day",
@@ -192,16 +193,7 @@ class _RegisterCheckOutState extends State<RegisterCheckOut> {
               ],
             ),
           ),
-          Container(
-            height: 50,
-            alignment: Alignment.center,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.deepOrange,
-            child: Text(
-              "Powered by HOMEBUOY",
-              style: homeBuoyFooter,
-            ),
-          ),
+          poweredBy(width),
         ],
       ),
     );

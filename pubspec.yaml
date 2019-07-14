@@ -25,6 +25,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   pit_carousel: ^0.2.1
   flare_flutter:
+  flutter_pdfview:
+  http:
 
 dev_dependencies:
   flutter_test:
@@ -44,15 +46,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - lib/img/splash_bg.png
-   - lib/img/pulsing.flr
-   - lib/img/Resizing_House.flr
-   - lib/img/no_lock.png
-   - lib/img/no_lock.gif
-   - lib/img/Appbar.png
-   - lib/img/busyMan.png
-   - lib/img/loading.gif
-   - lib/img/loader.gif
+   - lib/img/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

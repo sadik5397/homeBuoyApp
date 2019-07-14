@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'textStyle.dart';
+import 'colors.dart';
 import '../page/welcome.dart';
+import '../page/userManual.dart';
+import '../page/frontDesk.dart';
+import '../page/shop.dart';
+import '../page/setting.dart';
+import '../page/home.dart';
 
 Container leftSide(
     String hotelLogo, double width, double height, BuildContext context) {
@@ -45,22 +51,6 @@ Container leftSide(
           ),
         ),
       ],
-    ),
-  );
-}
-
-Hero homeBuoyFooterView(BuildContext context) {
-  return Hero(
-    tag: "homeBuoyFooterTag",
-    child: Container(
-      height: 50,
-      alignment: Alignment.center,
-      width: MediaQuery.of(context).size.width,
-      color: Colors.deepOrange,
-      child: Text(
-        "Powered by HOMEBUOY",
-        style: homeBuoyFooter,
-      ),
     ),
   );
 }
@@ -112,37 +102,354 @@ Container appBar(String hotelLogo, String hotelName, double width,
   );
 }
 
-BottomNavigationBar bottomNavs(int selectedIndex, var onItemTapped) {
-  return BottomNavigationBar(
-    items: const <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          title: Text('Home'),
-          backgroundColor: Colors.deepOrange),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.library_books),
-          title: Text('User Manual'),
-          backgroundColor: Colors.deepOrange),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.laptop_mac),
-          title: Text('Front Desk'),
-          backgroundColor: Colors.deepOrange),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
-          title: Text('Shop'),
-          backgroundColor: Colors.deepOrange),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          title: Text('Setting'),
-          backgroundColor: Colors.deepOrange),
-    ],
-    currentIndex: selectedIndex,
-    selectedItemColor: Colors.white,
-    onTap: onItemTapped,
-    iconSize: 50,
-    selectedFontSize: 20,
-    showUnselectedLabels: true,
-    unselectedFontSize: 15,
-    unselectedItemColor: Colors.white.withOpacity(.5),
+Container bottomNav(int _selectedIndex, double width, BuildContext context) {
+  return Container(
+    height: 120,
+    width: width,
+    color: homebuoyColor,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.home,
+                color: _selectedIndex == 0
+                    ? Colors.white
+                    : Colors.white.withOpacity(.5),
+              ),
+              iconSize: _selectedIndex == 0 ? 70 : 60,
+              onPressed: () {
+                _selectedIndex == 0
+                    // ignore: unnecessary_statements
+                    ? ""
+                    : Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Home();
+                          },
+                        ),
+                      );
+              },
+            ),
+            Text("Home",
+                style: _selectedIndex == 0
+                    ? bottomNavSelected
+                    : bottomNavUnSelected),
+            SizedBox(
+              height: 5,
+            )
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.library_books,
+                color: _selectedIndex == 1
+                    ? Colors.white
+                    : Colors.white.withOpacity(.5),
+              ),
+              iconSize: _selectedIndex == 1 ? 70 : 60,
+              onPressed: () {
+                _selectedIndex == 1
+                    // ignore: unnecessary_statements
+                    ? ""
+                    : Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return UserManual();
+                          },
+                        ),
+                      );
+              },
+            ),
+            Text("User Manual",
+                style: _selectedIndex == 1
+                    ? bottomNavSelected
+                    : bottomNavUnSelected),
+            SizedBox(
+              height: 5,
+            )
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.laptop_mac,
+                color: _selectedIndex == 2
+                    ? Colors.white
+                    : Colors.white.withOpacity(.5),
+              ),
+              iconSize: _selectedIndex == 2 ? 70 : 60,
+              onPressed: () {
+                _selectedIndex == 2
+                    // ignore: unnecessary_statements
+                    ? ""
+                    : Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return FrontDesk();
+                          },
+                        ),
+                      );
+              },
+            ),
+            Text("Front Desk",
+                style: _selectedIndex == 2
+                    ? bottomNavSelected
+                    : bottomNavUnSelected),
+            SizedBox(
+              height: 5,
+            )
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.shopping_cart,
+                color: _selectedIndex == 3
+                    ? Colors.white
+                    : Colors.white.withOpacity(.5),
+              ),
+              iconSize: _selectedIndex == 3 ? 70 : 60,
+              onPressed: () {
+                _selectedIndex == 3
+                    // ignore: unnecessary_statements
+                    ? ""
+                    : Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Shop();
+                          },
+                        ),
+                      );
+              },
+            ),
+            Text("Shop",
+                style: _selectedIndex == 3
+                    ? bottomNavSelected
+                    : bottomNavUnSelected),
+            SizedBox(
+              height: 5,
+            )
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: _selectedIndex == 4
+                    ? Colors.white
+                    : Colors.white.withOpacity(.5),
+              ),
+              iconSize: _selectedIndex == 4 ? 70 : 60,
+              onPressed: () {
+                _selectedIndex == 4
+                    // ignore: unnecessary_statements
+                    ? ""
+                    : Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return Setting();
+                          },
+                        ),
+                      );
+              },
+            ),
+            Text("Setting",
+                style: _selectedIndex == 4
+                    ? bottomNavSelected
+                    : bottomNavUnSelected),
+            SizedBox(
+              height: 5,
+            )
+          ],
+        ),
+      ],
+    ),
   );
+}
+
+Container shopC(
+    String productTitle, String price, String imgUrl, double width) {
+  return Container(
+    decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15.0),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black54.withOpacity(.15),
+              blurRadius: 10,
+              spreadRadius: 0)
+        ]),
+    margin: EdgeInsets.all(20),
+    width: (width - 40) * .3,
+    height: 500,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Stack(
+          alignment: Alignment.topRight,
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              )),
+              height: 220,
+              width: (width - 40) * .3,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+                child: FadeInImage.assetNetwork(
+                    placeholder: "lib/img/loading.gif",
+                    image: imgUrl,
+                    fit: BoxFit.cover),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  )),
+              alignment: Alignment.center,
+              height: 50,
+              width: 160,
+              child: Text(
+                "\$ $price",
+                style: shopPrice,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          productTitle,
+          style: shopTitle,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              height: 60,
+              width: 60,
+              child: RaisedButton(
+                onPressed: () {},
+                color: homebuoyColor,
+                child: Text(
+                  "-",
+                  style: bigButtonText,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: homebuoyColor, width: 3)),
+              child: Text(
+                "1",
+                style: shopPrice,
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 60,
+              child: RaisedButton(
+                onPressed: () {},
+                color: homebuoyColor,
+                child: Text(
+                  "+",
+                  style: bigButtonText,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        SizedBox(
+          height: 60,
+          width: 220,
+          child: RaisedButton(
+            onPressed: () {
+              print(price + productTitle + imgUrl);
+            },
+            color: homebuoyColor,
+            child: Text(
+              "ADD TO CART",
+              style: bigButtonText,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+SizedBox filterChip(String text, bool selected) {
+  return SizedBox(
+    height: 60,
+    width: 220,
+    child: RaisedButton(
+        color: selected ? homebuoyColor : Colors.white,
+        child: Text(
+          text,
+          style: selected ? bigButtonText : bigButtonTextReverse,
+        ),
+        onPressed: () {},
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
+  );
+}
+
+Image background() {
+  return Image.asset(
+    "lib/img/background.png",
+    fit: BoxFit.cover,
+  );
+}
+
+Container poweredBy(double width) {
+  return Container(
+    height: 50,
+    alignment: Alignment.center,
+    width: width,
+    color: Colors.deepOrange,
+    child: Text(
+      "Powered by HOMEBUOY",
+      style: homeBuoyFooter,
+    ),
+  );
+}
+
+FadeInImage sliderImage (String imgUrl){
+  return FadeInImage.assetNetwork(
+      placeholder: "lib/img/loading.gif",
+      placeholderScale: 0.5,
+      image: imgUrl,
+      fit: BoxFit.cover);
 }

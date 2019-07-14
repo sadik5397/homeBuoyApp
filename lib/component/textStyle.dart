@@ -32,6 +32,12 @@ TextStyle bigButtonText = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+TextStyle bigButtonTextReverse = TextStyle(
+  color: homebuoyColor,
+  fontSize: 25,
+  fontWeight: FontWeight.w600,
+);
+
 TextStyle homeBuoyFooter = TextStyle(
   color: Colors.white,
   fontSize: 20,
@@ -79,4 +85,28 @@ TextStyle tncStyle = TextStyle(
   height: 1.5,
   fontSize: 20,
   fontWeight: FontWeight.w400,
+);
+
+TextStyle bottomNavSelected = TextStyle(
+  color: Colors.white,
+  fontSize: 20,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle bottomNavUnSelected = TextStyle(
+  color: Colors.white.withOpacity(.5),
+  fontSize: 15,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle shopPrice = TextStyle(
+  color: Colors.black87,
+  fontSize: 30,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle shopTitle = TextStyle(
+  color: Colors.deepOrange,
+  fontSize: 35,
+  fontWeight: FontWeight.w600,
 );

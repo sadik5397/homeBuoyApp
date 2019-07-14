@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rakin_test/page/register.dart';
 import '../component/textStyle.dart';
 import 'login.dart';
+import '../component/function.dart';
 
 class Intro extends StatefulWidget {
   @override
@@ -87,13 +88,7 @@ class _IntroState extends State<Intro> {
               ],
             ),
           ),
-          Container(
-            height: 50,
-            alignment: Alignment.center,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.deepOrange,
-            child: Text("Powered by HOMEBUOY", style: homeBuoyFooter,),
-          )
+          poweredBy(width),
         ],
       ),
     );
