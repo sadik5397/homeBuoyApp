@@ -10,7 +10,7 @@ TextStyle main = TextStyle(
 
 TextStyle welcome = TextStyle(
   color: Colors.white,
-  fontSize: 110,
+  fontSize: 90,
   fontWeight: FontWeight.w300,
 );
 

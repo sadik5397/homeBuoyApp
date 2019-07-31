@@ -19,9 +19,9 @@ class _WelcomeState extends State<Welcome> {
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "Sifat";
+    var hotelName = "Ratul Bin Tazul";
     var hotelLogo =
-        "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
+        "https://avatars2.githubusercontent.com/u/18518430?s=460&v=4";
 
     return WillPopScope(
       onWillPop: () async => false,
@@ -53,6 +53,7 @@ class _WelcomeState extends State<Welcome> {
                   Text(
                     "Welcome $hotelName".toUpperCase(),
                     style: welcome,
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     height: 20,

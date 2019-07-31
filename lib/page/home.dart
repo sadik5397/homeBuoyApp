@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
     //API data
     var hotelName = "Sifat";
     var hotelLogo =
-        "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
+        "https://avatars2.githubusercontent.com/u/18518430?s=460&v=4";
     List carslImage = [
       "https://picsum.photos/1920/1080?random=1",
       "https://picsum.photos/1920/1080?random=2",
