@@ -71,7 +71,7 @@ class _RegisterState extends State<Register> {
                                   TextFormField(
                                     keyboardType: TextInputType.text,
                                     style: formData,
-                                    autofocus: true,
+                                    autofocus: false,
                                     decoration: InputDecoration(
                                       labelText: "Your Name",
                                       hintText: "e.g.: John Doe",

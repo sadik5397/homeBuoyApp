@@ -49,7 +49,7 @@ class _SettingState extends State<Setting> {
                             height: 25,
                           ),
                           TextFormField(
-                            autofocus: true,
+                            autofocus: false,
                             keyboardType: TextInputType.text,
                             obscureText: true,
                             style: formData,

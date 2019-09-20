@@ -26,6 +26,7 @@ dependencies:
   pit_carousel: ^0.2.1
   flare_flutter:
   flutter_pdfview:
+  video_player: ^0.5.1
   http:
 
 dev_dependencies:

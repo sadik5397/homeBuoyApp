@@ -75,7 +75,7 @@ class _RegisterCheckOutState extends State<RegisterCheckOut> {
                                         width: width * .5 * .25,
                                         child: TextFormField(
                                           keyboardType: TextInputType.number,
-                                          autofocus: true,
+                                          autofocus: false,
                                           style: formData,
                                           decoration: InputDecoration(
                                             labelText: "Day",
