@@ -448,7 +448,7 @@ Container poweredBy(double width) {
 
 FadeInImage sliderImage (String imgUrl){
   return FadeInImage.assetNetwork(
-      placeholder: "lib/img/loading.gif",
+      placeholder: "lib/img/loader.gif",
       placeholderScale: 0.5,
       image: imgUrl,
       fit: BoxFit.cover);
