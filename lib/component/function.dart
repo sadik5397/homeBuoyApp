@@ -294,7 +294,7 @@ Container shopC(
         ]),
     margin: EdgeInsets.all(20),
     width: (width - 40) * .3,
-    height: 500,
+//    height: 500,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
@@ -410,19 +410,22 @@ Container shopC(
   );
 }
 
-SizedBox filterChip(String text, bool selected) {
-  return SizedBox(
-    height: 60,
-    width: 220,
-    child: RaisedButton(
-        color: selected ? homebuoyColor : Colors.white,
-        child: Text(
-          text,
-          style: selected ? bigButtonText : bigButtonTextReverse,
-        ),
-        onPressed: () {},
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
+Padding filterChip(String text, bool selected) {
+  return Padding(
+    padding: const EdgeInsets.only(right : 20, bottom: 16, top: 16),
+    child: SizedBox(
+      height: 60,
+      width: 220,
+      child: RaisedButton(
+          color: selected ? homebuoyColor : Colors.white,
+          child: Text(
+            text,
+            style: selected ? bigButtonText : bigButtonTextReverse,
+          ),
+          onPressed: () {},
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
+    ),
   );
 }
 

@@ -1,10 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:rakin_test/model/listing.dart';
 import '../component/function.dart';
 import 'package:pit_carousel/pit_carousel.dart';
-import 'package:http/http.dart' as http;
 
 class Home extends StatefulWidget {
   @override
@@ -12,34 +8,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String url = 'http://homebuoy.com.au/html/get_all_listing.php';
-  List<Listings> listings;
-
-List<Listings> listingsFromJson(String str) => List<Listings>.from(json.decode(str).map((x) => Listings.fromJson(x)));
-
-  Future<String> getJsonData() async{
-    var response = await http.get(
-      Uri.encodeFull(url),
-      headers: {"Accept" : "application/json"}
-    );
-
-    print(response.body);
-
-    setState(() {
-      listings = listingsFromJson(response.body);
-      print("state: "+response.body);
-    });
-
-    return "success";
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    this.getJsonData();
-    print("called init");
-  }
-
   @override
   Widget build(BuildContext context) {
     //Default Values
@@ -48,10 +16,9 @@ List<Listings> listingsFromJson(String str) => List<Listings>.from(json.decode(s
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "";
-    var hotelLogo =
-        "http://homebuoy.com.au/img/aatosh_logo.png";
-    List carslImage = [
+    var hotelName = "Lorem Ipsum";
+    var hotelLogo = "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
+    List caorselImage = [
       "https://picsum.photos/1920/1080?random=1",
       "https://picsum.photos/1920/1080?random=2",
       "https://picsum.photos/1920/1080?random=3",
@@ -79,19 +46,18 @@ List<Listings> listingsFromJson(String str) => List<Listings>.from(json.decode(s
                   animationCurve: Curves.easeInOutQuad,
                   animationDuration: Duration(milliseconds: 800),
                   displayDuration: Duration(seconds: 5),
-                  children: //<Widget>[
-                    listings
-                    // sliderImage(carslImage[0]),
-                    // sliderImage(carslImage[1]),
-                    // sliderImage(carslImage[2]),
-                    // sliderImage(carslImage[3]),
-                    // sliderImage(carslImage[4]),
-                    // sliderImage(carslImage[5]),
-                    // sliderImage(carslImage[6]),
-                    // sliderImage(carslImage[7]),
-                    // sliderImage(carslImage[8]),
-                    // sliderImage(carslImage[9]),
-                  //],
+                  children: <Widget>[
+                    sliderImage(caorselImage[0]),
+                    sliderImage(caorselImage[1]),
+                    sliderImage(caorselImage[2]),
+                    sliderImage(caorselImage[3]),
+                    sliderImage(caorselImage[4]),
+                    sliderImage(caorselImage[5]),
+                    sliderImage(caorselImage[6]),
+                    sliderImage(caorselImage[7]),
+                    sliderImage(caorselImage[8]),
+                    sliderImage(caorselImage[9]),
+                  ],
                 ),
               ),
               //BottomNavigation

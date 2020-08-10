@@ -17,7 +17,7 @@ class _SecretSettingState extends State<SecretSetting> {
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "Sifat";
+    var hotelName = "Lorem Ipsum";
     var hotelLogo =
         "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
 
@@ -38,42 +38,45 @@ class _SecretSettingState extends State<SecretSetting> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Material(
-                              child: InkWell(
-                                child: Image.asset("lib/img/wifi.png"),
-                                onTap: () {},
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Material(
+                                child: InkWell(
+                                  child: Image.asset("lib/img/wifi.png"),
+                                  onTap: () {},
+                                ),
                               ),
-                            ),
-                            Material(
-                              child: InkWell(
-                                child: Image.asset("lib/img/brightness.png"),
-                                onTap: () {},
+                              Material(
+                                child: InkWell(
+                                  child: Image.asset("lib/img/brightness.png"),
+                                  onTap: () {},
+                                ),
                               ),
-                            ),
-                            Material(
-                              child: InkWell(
-                                child: Image.asset("lib/img/reset.png"),
-                                onTap: () {},
+                              Material(
+                                child: InkWell(
+                                  child: Image.asset("lib/img/reset.png"),
+                                  onTap: () {},
+                                ),
                               ),
-                            ),
-                            Material(
-                              child: InkWell(
-                                child: Image.asset("lib/img/checkout.png"),
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (BuildContext context) {
-                                        return Welcome();
-                                      },
-                                    ),
-                                  );
-                                },
+                              Material(
+                                child: InkWell(
+                                  child: Image.asset("lib/img/checkout.png"),
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) {
+                                          return Welcome();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 30,

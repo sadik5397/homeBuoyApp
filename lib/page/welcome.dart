@@ -19,7 +19,7 @@ class _WelcomeState extends State<Welcome> {
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "";
+    var hotelName = "Lorem Ipsum";
     var hotelLogo =
         "http://homebuoy.com.au/img/aatosh_logo.png";
 
@@ -35,8 +35,9 @@ class _WelcomeState extends State<Welcome> {
               fit: BoxFit.cover,
             ),
             Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              alignment: Alignment.center,
+              child: ListView(
+//                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Hero(
                     tag: "hotelLogo",
@@ -51,7 +52,7 @@ class _WelcomeState extends State<Welcome> {
                     height: 50,
                   ),
                   Text(
-                    "Welcome".toUpperCase(),
+                    "Welcome to $hotelName".toUpperCase(),
                     style: welcome,
                     textAlign: TextAlign.center,
                   ),
@@ -60,6 +61,7 @@ class _WelcomeState extends State<Welcome> {
                   ),
                   Text(
                     "Press and hold to Complete Guest Check-in",
+                    textAlign: TextAlign.center,
                     style: welcomeSubtitle,
                   ),
                   SizedBox(

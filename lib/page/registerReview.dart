@@ -46,8 +46,8 @@ class _RegisterReviewState extends State<RegisterReview> {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(40),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          child: ListView(
+//                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
                                 "Review",
@@ -77,6 +77,7 @@ class _RegisterReviewState extends State<RegisterReview> {
                                   ),
                                   Text(
                                     "Registration Completed!",
+                                    textAlign: TextAlign.center,
                                     style: subHeading,
                                   ),
                                   SizedBox(
@@ -84,6 +85,7 @@ class _RegisterReviewState extends State<RegisterReview> {
                                   ),
                                   Text(
                                     "Rate The Property Your First Impression",
+                                    textAlign: TextAlign.center,
                                     style: subHeading,
                                   ),
                                   SizedBox(

@@ -15,7 +15,7 @@ class _FrontDeskState extends State<FrontDesk> {
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "Sifat";
+    var hotelName = "Lorem Ipsum";
     var hotelLogo =
         "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
 
@@ -33,28 +33,31 @@ class _FrontDeskState extends State<FrontDesk> {
                   alignment: Alignment.center,
                   children: <Widget>[
                     background(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Material(
-                          child: InkWell(
-                            child: Image.asset("lib/img/call.png"),
-                            onTap: () {},
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Material(
+                            child: InkWell(
+                              child: Image.asset("lib/img/call.png"),
+                              onTap: () {},
+                            ),
                           ),
-                        ),
-                        Material(
-                          child: InkWell(
-                            child: Image.asset("lib/img/chat.png"),
-                            onTap: () {},
+                          Material(
+                            child: InkWell(
+                              child: Image.asset("lib/img/chat.png"),
+                              onTap: () {},
+                            ),
                           ),
-                        ),
-                        Material(
-                          child: InkWell(
-                            child: Image.asset("lib/img/room.png"),
-                            onTap: () {},
+                          Material(
+                            child: InkWell(
+                              child: Image.asset("lib/img/room.png"),
+                              onTap: () {},
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),

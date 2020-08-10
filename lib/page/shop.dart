@@ -15,7 +15,7 @@ class _ShopState extends State<Shop> {
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "Sifat";
+    var hotelName = "Lorem Ipsum";
     var hotelLogo =
         "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
     List category = [
@@ -78,10 +78,9 @@ class _ShopState extends State<Shop> {
                           child: Column(
                             children: <Widget>[
                               //Filter
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 20),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
                                     filterChip("All", true),
                                     filterChip(category[0], false),
@@ -92,49 +91,55 @@ class _ShopState extends State<Shop> {
                                 ),
                               ),
                               //Products
-                              Row(
-                                children: <Widget>[
-                                  shopC(
-                                    productData[0]["productTitle"],
-                                    productData[0]["price"],
-                                    productData[0]["imgUrl"],
-                                    width,
-                                  ),
-                                  shopC(
-                                    productData[1]["productTitle"],
-                                    productData[1]["price"],
-                                    productData[1]["imgUrl"],
-                                    width,
-                                  ),
-                                  shopC(
-                                    productData[2]["productTitle"],
-                                    productData[2]["price"],
-                                    productData[2]["imgUrl"],
-                                    width,
-                                  ),
-                                ],
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  children: <Widget>[
+                                    shopC(
+                                      productData[0]["productTitle"],
+                                      productData[0]["price"],
+                                      productData[0]["imgUrl"],
+                                      width,
+                                    ),
+                                    shopC(
+                                      productData[1]["productTitle"],
+                                      productData[1]["price"],
+                                      productData[1]["imgUrl"],
+                                      width,
+                                    ),
+                                    shopC(
+                                      productData[2]["productTitle"],
+                                      productData[2]["price"],
+                                      productData[2]["imgUrl"],
+                                      width,
+                                    ),
+                                  ],
+                                ),
                               ),
-                              Row(
-                                children: <Widget>[
-                                  shopC(
-                                    productData[3]["productTitle"],
-                                    productData[3]["price"],
-                                    productData[3]["imgUrl"],
-                                    width,
-                                  ),
-                                  shopC(
-                                    productData[4]["productTitle"],
-                                    productData[4]["price"],
-                                    productData[4]["imgUrl"],
-                                    width,
-                                  ),
-                                  shopC(
-                                    productData[5]["productTitle"],
-                                    productData[5]["price"],
-                                    productData[5]["imgUrl"],
-                                    width,
-                                  ),
-                                ],
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  children: <Widget>[
+                                    shopC(
+                                      productData[3]["productTitle"],
+                                      productData[3]["price"],
+                                      productData[3]["imgUrl"],
+                                      width,
+                                    ),
+                                    shopC(
+                                      productData[4]["productTitle"],
+                                      productData[4]["price"],
+                                      productData[4]["imgUrl"],
+                                      width,
+                                    ),
+                                    shopC(
+                                      productData[5]["productTitle"],
+                                      productData[5]["price"],
+                                      productData[5]["imgUrl"],
+                                      width,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

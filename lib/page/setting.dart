@@ -18,7 +18,7 @@ class _SettingState extends State<Setting> {
     var height = MediaQuery.of(context).size.height;
 
     //API data
-    var hotelName = "Sifat";
+    var hotelName = "Lorem Ipsum";
     var hotelLogo =
         "https://avatars0.githubusercontent.com/u/46283609?s=280&v=4";
 
